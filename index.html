@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم دار مسك - قائمة الطعام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --gold: #d4af37;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: #2a2a2a;
+            --whatsapp: #25D366;
+            --map: #4285F4;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 20px; }
+        .container { max-width: 700px; margin: 0 auto; }
+
+        /* Header */
+        header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+        h1 { color: var(--gold); font-size: 2.4em; margin-bottom: 10px; }
+        .rating { font-size: 0.95em; color: var(--text-muted); margin-bottom: 10px; }
+        .rating span { color: #ffc107; }
+        .status { display: inline-block; background-color: #2e7d32; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; margin-bottom: 15px; }
+
+        /* Contact Bar */
+        .contact-bar { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; color: white; border: none; cursor: pointer; }
+        .btn-whatsapp { background-color: var(--whatsapp); }
+        .btn-whatsapp:hover { background-color: #1ebe5d; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
+        .btn-map { background-color: var(--map); }
+        .btn-map:hover { background-color: #3367d6; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3); }
+
+        /* Menu Sections */
+        .menu-section { margin-bottom: 40px; }
+        .section-title { color: var(--gold); font-size: 1.7em; text-align: center; margin-bottom: 25px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 10px auto 0; border-radius: 2px; }
+
+        /* Menu Item Card */
+        .menu-card { display: flex; background-color: var(--card-color); border-radius: 12px; overflow: hidden; margin-bottom: 15px; transition: transform 0.3s ease; border: 1px solid transparent; }
+        .menu-card:hover { transform: translateY(-3px); border-color: var(--gold); box-shadow: 0 6px 15px rgba(212, 175, 55, 0.15); }
+        .menu-card img { width: 120px; height: 120px; object-fit: cover; flex-shrink: 0; }
+        .menu-card-info { padding: 15px 18px; display: flex; flex-direction: column; justify-content: center; flex-grow: 1; }
+        .menu-card-info h3 { font-size: 1.2em; margin-bottom: 5px; }
+        .menu-card-info p { font-size: 0.85em; color: var(--text-muted); margin-bottom: 10px; }
+        .item-price { color: var(--gold); font-weight: 700; font-size: 1.1em; margin-top: auto; }
+
+        /* Footer */
+        footer { text-align: center; margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9em; }
+        footer a { color: var(--gold); text-decoration: none; }
+        .reviews-box { background-color: var(--card-color); padding: 20px; border-radius: 12px; margin-top: 20px; text-align: right; border-right: 3px solid var(--gold); }
+        .review { font-style: italic; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); }
+        .review:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .reviewer { font-size: 0.85em; color: var(--gold); font-style: normal; font-weight: 600; margin-top: 5px; display: block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>مطعم دار مسك</h1>
+        <div class="rating">⭐ 4.1 (135 تقييم)</div>
+        <div class="status">مفتوح الآن • يغلق 01:00 صباحاً</div>
+    </header>
+
+    <!-- أزرار التواصل والموقع -->
+    <div class="contact-bar">
+        <a href="https://wa.me/963950544544" class="btn btn-whatsapp" target="_blank">
+            📱 اطلب عبر واتساب
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=33.5065021,36.3073006" class="btn btn-map" target="_blank">
+            📍 الموقع على الخريطة
+        </a>
+    </div>
+
+    <!-- قسم المشاوي -->
+    <div class="menu-section">
+        <h2 class="section-title">المشاوي</h2>
+
+        <h3 class="sub-title">مشاوي الدجاج</h3>
+        <div class="menu-list">
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&q=80" alt="شيش طاووق">
+                <div class="menu-card-info">
+                    <h3>شيش طاووق</h3>
+                    <p>قطع دجاج متبلة مشوية على الفحم</p>
+                    <div class="item-price">12,000 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&q=80" alt="فروج على الفحم">
+                <div class="menu-card-info">
+                    <h3>فروج على الفحم</h3>
+                    <p>فروج كامل مشوي على الفحم</p>
+                    <div class="item-price">12,500 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&q=80" alt="كباب دجاج">
+                <div class="menu-card-info">
+                    <h3>كباب دجاج</h3>
+                    <p>أسياخ كباب دجاج مفروم</p>
+                    <div class="item-price">10,000 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400&q=80" alt="جوانح">
+                <div class="menu-card-info">
+                    <h3>جوانح</h3>
+                    <p>أجنحة دجاج متبلة ومشوية</p>
+                    <div class="item-price">8,000 ل.س</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="sub-title">مشاوي اللحم</h3>
+        <div class="menu-list">
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" alt="كباب">
+                <div class="menu-card-info">
+                    <h3>كباب</h3>
+                    <p>كباب لحم مشوي على الفحم</p>
+                    <div class="item-price">9,500 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="ريش">
+                <div class="menu-card-info">
+                    <h3>ريش</h3>
+                    <p>ريش غنم مشوية</p>
+                    <div class="item-price">9,500 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&q=80" alt="مشكل">
+                <div class="menu-card-info">
+                    <h3>مشكل</h3>
+                    <p>تشكيلة مشاوي مشكلة</p>
+                    <div class="item-price">9,500 ل.س</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم الوجبات الغربية -->
+    <div class="menu-section">
+        <h2 class="section-title">الوجبات الغربية</h2>
+        <div class="menu-list">
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=400&q=80" alt="كوردون بلو">
+                <div class="menu-card-info">
+                    <h3>كوردون بلو</h3>
+                    <p>صدر دجاج محشو بالجبن واللحم</p>
+                    <div class="item-price">8,500 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80" alt="كريسبي">
+                <div class="menu-card-info">
+                    <h3>كريسبي</h3>
+                    <p>دجاج مقرمش مع البطاطا</p>
+                    <div class="item-price">8,500 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&q=80" alt="زنجر">
+                <div class="menu-card-info">
+                    <h3>زنجر</h3>
+                    <p>برغر دجاج حار مقرمش</p>
+                    <div class="item-price">8,500 ل.س</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80" alt="سوبريم">
+                <div class="menu-card-info">
+                    <h3>سوبريم</h3>
+                    <p>برغر دجاج مع الصوص الخاص</p>
+                    <div class="item-price">8,500 ل.س</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <div>📍 دمشق القديمة - مدحت باشا - نزلة الدقاقين - باب الحديد</div>
+            <div>📞 <a href="tel:+963950544544">0950 544 544</a></div>
+        </div>
+
+        <div class="reviews-box">
+            <div class="review">
+                "مطعم ممتاز والأكل فيه لذيذ"
+                <span class="reviewer">- Anas Erksousi</span>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
